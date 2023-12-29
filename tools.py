@@ -93,7 +93,7 @@ def aws_well_arch_tool(query):
     Question: {query}
     Answer:"""
 
-    generated_text = call_titan(prompt)
+    generated_text = call_claude(prompt)
     print(generated_text)
 
     resp_string = (
