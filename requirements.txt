@@ -1,4 +1,4 @@
 langchain
 faiss-cpu
-boto3
-botocore
+boto3 >= 1.34.10
+botocore >= 1.34.10
