@@ -1,8 +1,8 @@
 import json
 
 import boto3
-from langchain.embeddings import BedrockEmbeddings
-from langchain.vectorstores import FAISS
+from langchain_community.embeddings import BedrockEmbeddings
+from langchain_community.vectorstores import FAISS
 
 
 bedrock_runtime = boto3.client(
