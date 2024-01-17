@@ -2,10 +2,10 @@ import xml.etree.ElementTree as ET
 
 import boto3
 import requests
-from langchain.document_loaders import SeleniumURLLoader
-from langchain.embeddings import BedrockEmbeddings
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.vectorstores import FAISS
+from langchain_community.document_loaders import SeleniumURLLoader
+from langchain_community.embeddings import BedrockEmbeddings
+from langchain_community.text_splitter import RecursiveCharacterTextSplitter
+from langchain_community.vectorstores import FAISS
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
