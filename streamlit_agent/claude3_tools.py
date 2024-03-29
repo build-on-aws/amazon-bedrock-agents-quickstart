@@ -6,7 +6,7 @@ import subprocess
 import re
 from typing import Type, Union, Dict, Any, List
 import logging
-
+import sys
 import boto3
 from langchain_community.embeddings import BedrockEmbeddings
 from langchain_community.vectorstores import FAISS
@@ -293,14 +293,18 @@ def save_and_run_python_code(code: str, file_name: str = "/tmp/test_diag.py"):
     # Run the code using a subprocess
     try:
         os.chdir("/tmp")
+        python_executable = sys.executable
         result = subprocess.run(
-            ["python", file_name], capture_output=True, text=True, check=True
+            [python_executable, file_name], capture_output=True, text=True, check=True
         )
         # go back...
     except subprocess.CalledProcessError as e:
         print("Error occurred while running the code:")
         print(e.stdout)
         print(e.stderr)
+        # Exit program with error Exception
+        raise Exception("Error running the Python code.")
+
 
 
 def process_code(code):

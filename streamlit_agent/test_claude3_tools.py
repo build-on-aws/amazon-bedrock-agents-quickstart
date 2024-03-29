@@ -11,7 +11,7 @@ query = "A diagram that shows an s3 bucket connected to an ec2 instance"
 diag = claude3_tools.diagram_tool(query)
 
 base64_string = claude3_tools.pil_to_base64(diag)
-print(base64_string)
+# print(base64_string)
 caption = claude3_tools.gen_image_caption(base64_string)
 print(caption)
 print("diagram tool done")
